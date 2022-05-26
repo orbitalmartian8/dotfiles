@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>nvim</icon>
+	<name>Open with Neovim</name>
+	<unique-id>1607431269338655-1</unique-id>
+	<command>urxvt -e nvim %f</command>
+	<description>Open file into Neovim</description>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Set as wallpaper</name>
+	<unique-id>1607356754529312-1</unique-id>
+	<command>~/scripts/wallpaper %f</command>
+	<description>Set picture as wallpaper</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Set as live wallpaper</name>
+	<unique-id>1609341125791336-2</unique-id>
+	<command>~/scripts/livewallpaper %f &gt; /dev/null 2&gt;&amp;1</command>
+	<description>Set video as live wallpaper</description>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1599251039424843-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+</actions>
