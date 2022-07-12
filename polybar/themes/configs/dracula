@@ -26,21 +26,21 @@ format-padding =
 format-margin =
 format-offset =
 
-include-file = ~/.config/polybar/themes/colors/dracula.ini
-include-file = ~/.config/polybar/themes/modules/dracula.ini
+include-file = ~/.config/i3/polybar/themes/theme.ini
+include-file = ~/.config/i3/polybar/themes/modules/modules.ini
 
 
 ############                         MAINBAR-I3                     ############
 
 [bar/mainbar-i3]
 
-#monitor = DP-2
+monitor = ${env:MONITOR}
 monitor-strict = false
 override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 22
+height = 19
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -55,14 +55,14 @@ line-size = 2
 border-size = 0
 ;border-left-size = 25
 ;border-right-size = 25
-border-top-size = 0
-border-bottom-size = 0
-border-color = ${colors.background}
+border-top-size = 2
+border-bottom-size = 2
+border-color = ${colors.bg0}
 
-padding-left = 0
-padding-right = 0
+padding-left = 1
+padding-right = 1
 
-module-margin-left = 0
+module-margin-left = 2
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
@@ -71,9 +71,9 @@ font-1 = "FontAwesome:size=22;5"
 font-2 = "JetBrainsMono Nerd Font:size=10;2"
 font-3 = "JetBrainsMono Nerd Font:size=22;5"
 
-modules-left = i3 sep xwindow
-modules-center = date
-modules-right = weather sep uptime sep volume sep
+modules-left = i3 xwindow 
+modules-center =  
+modules-right = music weather uptime memory2 cpu2 date 
 
 ;separator = |
 
@@ -85,7 +85,7 @@ tray-offset-y = 0
 tray-padding = 2
 tray-maxsize = 20
 tray-scale = 1.0
-tray-position = right
+tray-position = none
 tray-background = ${colors.background}
 
 #i3: Make the bar appear below windows
@@ -115,61 +115,61 @@ double-click-right =
 cursor-click =
 cursor-scroll =
 
-#[bar/mainbar2-i3]
+[bar/mainbar2-i3]
 
-#monitor = HDMI-2
-#monitor-strict = false
-#override-redirect = false
-#bottom = false
-#fixed-center = true
-#width = 100%
-#height = 22
+monitor = HDMI-2
+monitor-strict = false
+override-redirect = false
+bottom = false
+fixed-center = true
+width = 100%
+height = 19
 
-#background = ${colors.background}
-#foreground = ${colors.foreground}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 ; Background gradient (vertical steps)
 ;   background-[0-9]+ = #aarrggbb
 ;background-0 =
 
-#radius = 0.0
-#line-size = 2
+radius = 0.0
+line-size = 2
 
-#border-size = 0
+border-size = 0
 ;border-left-size = 25
 ;border-right-size = 25
-#border-top-size = 0
-#border-bottom-size = 0
-#border-color = ${colors.background}
+border-top-size = 2
+border-bottom-size = 2
+border-color = ${colors.bg0}
 
-#padding-left = 0
-#padding-right = 0
+padding-left = 1
+padding-right = 1
 
-#module-margin-left = 0
-#module-margin-right = 0
+module-margin-left = 2
+module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-#font-0 = "JetBrainsMono Nerd Font:size=10;2"
-#font-1 = "FontAwesome:size=22;5"
-#font-2 = "JetBrainsMono Nerd Font:size=10;2"
-#font-3 = "JetBrainsMono Nerd Font:size=22;5"
+font-0 = "JetBrainsMono Nerd Font:size=10;2"
+font-1 = "FontAwesome:size=22;5"
+font-2 = "JetBrainsMono Nerd Font:size=10;2"
+font-3 = "JetBrainsMono Nerd Font:size=22;5"
 
-#modules-left = i3 leftarrow xwindow
-#modules-center =  
-#modules-right = arrow0 mail arrow1 music arrow2 weather arrow3 uptime arrow4 memory2 arrow5 cpu2 arrow6 date 
+modules-left = i3 xwindow 
+modules-center =  
+modules-right = music weather uptime memory2 cpu2 date 
 
 ;separator = |
 
 ;dim-value = 1.0
 
-#tray-detached = false
-#tray-offset-x = 0
-#tray-offset-y = 0
-#tray-padding = 2
-#tray-maxsize = 20
-#tray-scale = 1.0
-#tray-position = none
-#tray-background = ${colors.background}
+tray-detached = false
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 2
+tray-maxsize = 20
+tray-scale = 1.0
+tray-position = none
+tray-background = ${colors.background}
 
 #i3: Make the bar appear below windows
 ;wm-restack = i3
@@ -177,26 +177,27 @@ cursor-scroll =
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
-#enable-ipc = true
+enable-ipc = true
 
 ; Fallback click handlers that will be called if
 ; there's no matching module handler found.
-#click-left =
-#click-middle =
-#click-right =
-#scroll-up = i3wm-wsnext
-#scroll-down = i3wm-wsprev
-#double-click-left =
-#double-click-middle =
-#double-click-right =
+click-left =
+click-middle =
+click-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+double-click-left =
+double-click-middle =
+double-click-right =
 
 ; Requires polybar to be built with xcursor support (xcb-util-cursor)
 ; Possible values are:
 ; - default   : The default pointer as before, can also be an empty string (default)
 ; - pointer   : Typically in the form of a hand
 ; - ns-resize : Up and down arrows, can be used to indicate scrolling
-#cursor-click =
-#cursor-scroll =
+cursor-click =
+cursor-scroll =
+
 
 
 ################################################################################
